@@ -1,5 +1,8 @@
 PhotobuffFastTrack::Application.routes.draw do
   get "login" => "auth#login"
+  post "login" => "auth#dologin"
+
+  
   get "logout" => "auth#logout"
 
   resources :comments
