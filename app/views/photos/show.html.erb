@@ -20,5 +20,10 @@
   <%= @photo.thumbnail %>
 </p>
 
+<% @photo.comments.each do |comment| %>
+  <%= comment.user.first_name %>
+  <%= comment.message %>
+<% end %>
+
 <%= link_to 'Edit', edit_photo_path(@photo) %> |
 <%= link_to 'Back', photos_path %>
