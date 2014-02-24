@@ -14,4 +14,12 @@ class ApplicationController < ActionController::Base
     @current_user ||= User.find_by_id(session[:user_id])
   end
 
+  # Require a login
+  def require_login
+    if !user_signed_in?
+      flash[:error] = "Please login to post a photo!"
+      redirect_to login_path
+    end
+  end
+
 end

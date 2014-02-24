@@ -1,6 +1,8 @@
 class PhotosController < ApplicationController
   before_action :set_photo, only: [:show, :edit, :update, :destroy]
 
+  before_action :require_login, :only => [:new, :edit, :create, :update, :destroy]
+
   # GET /photos
   # GET /photos.json
   def index

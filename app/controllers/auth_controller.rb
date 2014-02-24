@@ -19,7 +19,7 @@ class AuthController < ApplicationController
   end
 
   def logout
-    session[:user] = nil
+    session[:user_id] = nil
     flash[:success] = "Logged out"
     redirect_to login_path
   end
