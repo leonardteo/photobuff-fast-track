@@ -37,6 +37,8 @@ gem 'bcrypt-ruby', '~> 3.1.2'
 
 gem 'pry-rails'
 
+gem "paperclip", "~> 3.0"
+
 # Use unicorn as the app server
 # gem 'unicorn'
 

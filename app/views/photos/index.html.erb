@@ -4,10 +4,8 @@
 <table>
   <thead>
     <tr>
-      <th>Image</th>
       <th>Title</th>
       <th>Description</th>
-      <th>Thumbnail</th>
       <th></th>
       <th></th>
       <th></th>
@@ -17,10 +15,8 @@
   <tbody>
     <% @photos.each do |photo| %>
       <tr>
-        <td><%= photo.image %></td>
         <td><%= photo.title %></td>
         <td><%= photo.description %></td>
-        <td><%= photo.thumbnail %></td>
         <td><%= link_to 'Show', photo %></td>
         <td><%= link_to 'Edit', edit_photo_path(photo) %></td>
         <td><%= link_to 'Destroy', photo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
