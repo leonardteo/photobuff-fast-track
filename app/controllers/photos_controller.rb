@@ -6,7 +6,7 @@ class PhotosController < ApplicationController
   # GET /photos
   # GET /photos.json
   def index
-    @photos = Photo.all
+    @photos = Photo.order("created_at DESC").limit(16)
   end
 
   # GET /photos/1
