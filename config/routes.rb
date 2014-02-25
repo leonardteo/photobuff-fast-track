@@ -1,7 +1,6 @@
 PhotobuffFastTrack::Application.routes.draw do
   get "login" => "auth#login"
   post "login" => "auth#dologin"
-
   
   get "logout" => "auth#logout"
 
@@ -10,6 +9,8 @@ PhotobuffFastTrack::Application.routes.draw do
   resources :users
 
   resources :photos
+
+  resource :profile, only: [:show, :update]
 
   root "photos#index"
 

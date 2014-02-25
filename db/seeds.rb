@@ -10,9 +10,9 @@ def photo_path(i)
   File.join(Rails.root, "test", "fixtures", "photos", "photo#{i}.jpg")
 end
 
-# def avatar_path(i)
-#   File.join(Rails.root, "test", "fixtures", "avatars", "avatar#{i}.jpg")
-# end
+def avatar_path(i)
+  File.join(Rails.root, "test", "fixtures", "avatars", "avatar#{i}.jpg")
+end
 
 def create_photo(user, i)
   photo = Photo.create(
@@ -33,7 +33,7 @@ user1 = User.create(
   email: "user1@example.com",
   password: "password",
   password_confirmation: "password",
-  # avatar: File.open(avatar_path(1))
+  avatar: File.open(avatar_path(1))
 )
 (1..4).each do |i|
   create_photo(user1, i)
@@ -46,7 +46,7 @@ user2 = User.create(
   email: "user2@example.com",
   password: "password",
   password_confirmation: "password",
-  # avatar: File.open(avatar_path(2))
+  avatar: File.open(avatar_path(2))
 )
 (5..8).each do |i|
   create_photo(user2, i)
@@ -59,7 +59,7 @@ user3 = User.create(
   email: "user3@example.com",
   password: "password",
   password_confirmation: "password",
-  # avatar: File.open(avatar_path(3))
+  avatar: File.open(avatar_path(3))
 )
 (9..12).each do |i|
   create_photo(user3, i)
@@ -72,7 +72,7 @@ user4 = User.create(
   email: "user4@example.com",
   password: "password",
   password_confirmation: "password",
-  # avatar: File.open(avatar_path(4))
+  avatar: File.open(avatar_path(4))
 )
 (13..16).each do |i|
   create_photo(user4, i)

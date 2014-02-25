@@ -6,5 +6,7 @@
   <%= image_tag @photo.photo.url(:large), :class => "img-responsive" %>
 </p>
 
+<%= image_tag @photo.user.avatar.url(:thumb) %>
+
 <h4>Description</h4>
 <%= simple_format @photo.description %>
