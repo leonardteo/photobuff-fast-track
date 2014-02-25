@@ -1,8 +1,27 @@
 require 'test_helper'
 
 class ProfilesControllerTest < ActionController::TestCase
-  setup do
-    @profile = profiles(:one)
+
+  test "should view profile page" do
+    login_user(users(:one))
+    get :show
+    assert_response :success
+  end
+
+  test "should redirect if not logged in" do
+    get :show
+    assert_response 302
+  end
+
+  test "should update profile" do
+    user = users(:one)
+    login_user user
+    patch :update, :user => {
+      first_name: "Changed"
+    }
+    assert_response 302
+    user.reload
+    assert_equal("Changed", user.first_name)
   end
 
   # test "should get index" do
